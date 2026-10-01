@@ -4,6 +4,13 @@
     {
       "source": "/((?!assets/|favicon\\.svg|robots\\.txt|sitemap\\.xml|og-cover\\.svg).*)",
       "destination": "/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": {
+        "type": "service",
+        "service": "dscet-it-hub"
+      }
     }
   ],
   "headers": [
@@ -16,5 +23,12 @@
         }
       ]
     }
-  ]
+  ],
+  "services": {
+    "dscet-it-hub": {
+      "root": ".",
+      "framework": "vite",
+      "buildCommand": "npm install && npm run build"
+    }
+  }
 }
